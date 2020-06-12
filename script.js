@@ -16,20 +16,15 @@ var upperLetters = (((letters.join("")).toUpperCase()).split(""));
 
 
 
-// WORK NEEDED HERE *******************************************888888888888888
+// WORK NEEDED HERE *******
 
-// TODO: handle edge or corner cases to include false inputs
+// TODO: handle edge or corner cases to include false inputs.
 
   var userInput = prompt("Let's start with your desired Password length. Remember, I can make passwords 8-128 characters long."); 
-  let pwLength = parseInt(userInput);
-  let acceptLength = ((pwLength >= 8) && (pwLength <=128));
-  while ( pwLength < 8 || pwLength > 128) {
-    let userInput = prompt("No really, I'd like a number between 8 and 128.");
-    let pwLength = parseInt(userInput);
-
-  }
-// WORK NEEDED HERE ****** need edge case of people not putting in numbers, or outside of pw length. could make all inside single if/else regarding pwLength *************************************8888888888888888
-
+  let pwLength = parseInt(userInput, 10);
+  console.log(pwLength);
+ 
+// WORK NEEDED HERE ****** need edge case of people not putting in numbers, or outside of pw length. could make all inside single if/else regarding pwLength *************************
 
 
   // confirm if user wants special chars  
@@ -63,14 +58,16 @@ var upperLetters = (((letters.join("")).toUpperCase()).split(""));
       }
 
   // //TODO: when poss char array complete, build new password ***************needs work
+  while (passwordAr.length < pwLength) {
   let randomItem = possibleChars[Math.floor(Math.random()*possibleChars.length)];
   console.log(randomItem);
-
   passwordAr.push(randomItem);
   console.log(passwordAr);
+  
+}
   // for (passwordAr.length < !!!X!!! ) {
   //working HERE do I Parse out the int value input by user? how to be sure user input is number?
-  //  let passwordStr = passwordStr  + randomItem;
+  //  array add, join to string. (storing as array doesn't create a new one every time)
   // }
   // return passwordStr;
 }
