@@ -13,7 +13,7 @@ Then:
 - Once all questions have been answered, a randomized password of specified length will be generated for the user in the text box above the button in the GUI of the index.html site.
 
 
-# deployed site url:
+# deployed site url: https://epachols.github.io/PasswordGenerator/
 
 # Preview Photo:
 
