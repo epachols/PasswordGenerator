@@ -28,14 +28,18 @@ let specialChars = confirm("Would you like to include special chars?");
     console.log(possibleChars);
   }
   // confirm if user wants number chars
-  let numberChars = confirm("How about Numbers?");
-   if (numberChars == true) {
-     possibleChars.push(...numbers);
-     console.log(possibleChars);
-   }
+let numberChars = confirm("How about Numbers?");
+  if (numberChars == true) {
+    possibleChars.push(...numbers);
+    console.log(possibleChars);
+  }
 
-// TODO:confirm lowercase
-  // TODO:store in includeLower via return?
+// confirm user desire for lowercase
+  let lcChars = confirm("Include Lower case english alphabet?");
+    if (lcChars == true) {
+      possibleChars.push(...letters);
+      console.log(possibleChars);
+    }
 
 // TODO:confirm upper case 
   // TODO:store in includeUpper
