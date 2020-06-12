@@ -7,28 +7,32 @@ var possibleChars=[];
 var special = ["~", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_"];
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p", "q", "r", "s", "t", "u", "v","w","x","y","z"];
+let passwordAr = [];
 
 var upperLetters = (((letters.join("")).toUpperCase()).split(""));
+// which came from...
 // var lettString = letters.join("");
 // var upperLetters = (lettString.toUpperCase()).split("");
-// which turned into ...
+
 
 
 // WORK NEEDED HERE *******************************************888888888888888
 
-// TODO: LOOP THE EDGE CASE to include false inputs  pw length (8-128) store pw length in a variable
-let acceptLength = ((pwLength >= 8) && (pwLength <=128));
-do {
-  var pwLength = prompt("How long would you like your Password? (accepts 8-128 for length)"); 
-}
-while (condition);
-//   // let pwLength = prompt ("No really, I need a numerical password length between 8-128 to go anywhere");
-//   // code block to be executed
+// TODO: handle edge or corner cases to include false inputs
 
-// WORK NEEDED HERE *******************************************8888888888888888
+  var userInput = prompt("Let's start with your desired Password length. Remember, I can make passwords 8-128 characters long."); 
+  let pwLength = parseInt(userInput);
+  let acceptLength = ((pwLength >= 8) && (pwLength <=128));
+  while ( pwLength < 8 || pwLength > 128) {
+    let userInput = prompt("No really, I'd like a number between 8 and 128.");
+    let pwLength = parseInt(userInput);
 
-// confirm if user wants special chars
+  }
+// WORK NEEDED HERE ****** need edge case of people not putting in numbers, or outside of pw length. could make all inside single if/else regarding pwLength *************************************8888888888888888
 
+
+
+  // confirm if user wants special chars  
   let specialChars = confirm("Would you like to include special chars?");
     // includesSpecialCharacter
     if (specialChars) {
@@ -53,17 +57,26 @@ while (condition);
   // confirm upper case 
   let ucChars = confirm("Include uper case english alphabet?");
       if (ucChars) {
-          // TODO:store in includeUpper
+        //store in includeUpper
           possibleChars.push(...upperLetters);
           console.log(possibleChars);
       }
-  }
 
-    // TODO:also look at spread operator [...special, ...upper], so also will need arrays of special chars, numbers, etc
+  // //TODO: when poss char array complete, build new password ***************needs work
+  let randomItem = possibleChars[Math.floor(Math.random()*possibleChars.length)];
+  console.log(randomItem);
 
-// TODO:look at var specialChars = "!@*%&^#(".split   split is way to moderate a string by splitting it into an array, then .join can put them back together
+  passwordAr.push(randomItem);
+  console.log(passwordAr);
+  // for (passwordAr.length < !!!X!!! ) {
+  //working HERE do I Parse out the int value input by user? how to be sure user input is number?
+  //  let passwordStr = passwordStr  + randomItem;
+  // }
+  // return passwordStr;
+}
 
-//TODO: when poss char array complete, build new password
+
+
   //TODO: generate arrays, pick random from possible, add it to string var passwordStr="", then return passwordStr
 
 
