@@ -42,6 +42,10 @@ let numberChars = confirm("How about Numbers?");
     }
 
 // TODO:confirm upper case 
+let ucChars = confirm("Include uper case english alphabet?");
+    if (ucChars == true) {
+      console.log(letters.join(""));
+    }
   // TODO:store in includeUpper
 
       // TODO:5 vars so far to store STORE via push into possiblechars at top of code, do at confirm each step?
